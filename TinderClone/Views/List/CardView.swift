@@ -91,7 +91,6 @@ extension CardView {
         return window.screen.bounds.width
     }
     private var scale: CGFloat {
-        print(1.0 - (abs(offset.width) / screenWidth))
         return max(1.0 - (abs(offset.width) / screenWidth), 0.75)
     }
     private var angle: Double {

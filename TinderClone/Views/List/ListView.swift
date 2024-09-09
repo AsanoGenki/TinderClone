@@ -22,7 +22,7 @@ struct ListView: View {
 }
 
 #Preview {
-    LoginView()
+    LoginView(authViewModel: AuthViewModel())
 }
 
 extension ListView {

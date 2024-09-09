@@ -26,6 +26,7 @@
 		4ABF39C42C8DE1E20067C4C1 /* BrandImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF39C32C8DE1E20067C4C1 /* BrandImage.swift */; };
 		4ABF39C62C8DE2190067C4C1 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF39C52C8DE2190067C4C1 /* InputField.swift */; };
 		4ABF39C82C8DE4020067C4C1 /* BasicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF39C72C8DE4020067C4C1 /* BasicButton.swift */; };
+		4ABF39CA2C8DEA000067C4C1 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF39C92C8DEA000067C4C1 /* AuthViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		4ABF39C32C8DE1E20067C4C1 /* BrandImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandImage.swift; sourceTree = "<group>"; };
 		4ABF39C52C8DE2190067C4C1 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		4ABF39C72C8DE4020067C4C1 /* BasicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicButton.swift; sourceTree = "<group>"; };
+		4ABF39C92C8DEA000067C4C1 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 		4A8E87AA2C8C297A0045BFEA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				4ABF39C92C8DEA000067C4C1 /* AuthViewModel.swift */,
 				4A8E87AB2C8C29A40045BFEA /* ListViewModel.swift */,
 			);
 			path = ViewModels;
@@ -254,6 +257,7 @@
 				4A7FF9C62C89F6B500262906 /* CardView.swift in Sources */,
 				4ABF39B02C8DCF750067C4C1 /* Action.swift in Sources */,
 				4A8E87A92C8C269B0045BFEA /* User.swift in Sources */,
+				4ABF39CA2C8DEA000067C4C1 /* AuthViewModel.swift in Sources */,
 				4A7FF9C42C89F1F100262906 /* ListView.swift in Sources */,
 				4ABF39C12C8DDE910067C4C1 /* RegistrationView.swift in Sources */,
 				4ABF39C62C8DE2190067C4C1 /* InputField.swift in Sources */,
