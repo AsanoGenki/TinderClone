@@ -7,13 +7,12 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseFirestore
 
 class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
     init() {
-        userSession = Auth.auth().currentUser
-        // Test for logout
-//        logout()
+        self.userSession = Auth.auth().currentUser
     }
     // Login
     @MainActor
@@ -36,14 +35,28 @@ class AuthViewModel: ObservableObject {
         }
     }
     // Create Account
-    func createAccount(email: String, password: String) async {
+    @MainActor
+    func createAccount(email: String, password: String, name: String, age: Int) async {
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
-            print("アカウント登録成功: \(String(describing: result.user.email))")
             self.userSession = result.user
+            let newUser = User(id: result.user.uid, name: name, email: email, age: age)
+            await uploadUserData(withUser: newUser)
+            print("アカウント登録成功: \(String(describing: result.user.email))")
         } catch {
             print("アカウント登録失敗: \(error.localizedDescription)")
         }
     }
     // Delete Account
+    
+    // Upload User Data
+    private func uploadUserData(withUser user: User) async {
+        do {
+            let userData = try Firestore.Encoder().encode(user)
+            try await Firestore.firestore().collection("users").document(user.id).setData(userData)
+            print("データ保存成功")
+        } catch {
+            print("データ保存失敗: \(error.localizedDescription)")
+        }
+    }
 }

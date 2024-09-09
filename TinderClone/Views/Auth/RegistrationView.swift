@@ -48,7 +48,12 @@ struct RegistrationView: View {
             // Button
             BasicButton(label: "登録", icon: "arrow.right") {
                 Task {
-                    await authViewModel.createAccount(email: email, password: password)
+                    await authViewModel.createAccount(
+                        email: email,
+                        password: password,
+                        name: name,
+                        age: age
+                    )
                 }
             }
             .padding(.top, 24)
