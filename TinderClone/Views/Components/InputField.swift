@@ -12,6 +12,8 @@ struct InputField: View {
     let label: String
     let placeholder: String
     var isSecureField = false
+    var withDivider = true
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text(label)
@@ -23,7 +25,9 @@ struct InputField: View {
             } else {
                 TextField(placeholder, text: $text)
             }
-            Divider()
+            if withDivider {
+                Divider()
+            }
         }
     }
 }

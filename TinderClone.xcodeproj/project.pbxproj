@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A3003B92C99164E0026978D /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3003B82C99164E0026978D /* MyPageView.swift */; };
+		4A61D58C2C991A2600F60129 /* MyPageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A61D58B2C991A2600F60129 /* MyPageRow.swift */; };
+		4A61D58E2C991BB300F60129 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A61D58D2C991BB300F60129 /* EditProfileView.swift */; };
+		4A61D5902C991E3900F60129 /* PickerField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A61D58F2C991E3900F60129 /* PickerField.swift */; };
 		4A7B6E1A2C89EE5A007F0A96 /* TinderCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7B6E192C89EE5A007F0A96 /* TinderCloneApp.swift */; };
 		4A7B6E1C2C89EE5A007F0A96 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7B6E1B2C89EE5A007F0A96 /* ContentView.swift */; };
 		4A7B6E1E2C89EE5C007F0A96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A7B6E1D2C89EE5C007F0A96 /* Assets.xcassets */; };
@@ -30,6 +34,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A3003B82C99164E0026978D /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		4A61D58B2C991A2600F60129 /* MyPageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageRow.swift; sourceTree = "<group>"; };
+		4A61D58D2C991BB300F60129 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		4A61D58F2C991E3900F60129 /* PickerField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerField.swift; sourceTree = "<group>"; };
 		4A7B6E162C89EE5A007F0A96 /* TinderClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinderClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A7B6E192C89EE5A007F0A96 /* TinderCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderCloneApp.swift; sourceTree = "<group>"; };
 		4A7B6E1B2C89EE5A007F0A96 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,6 +72,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A3003BA2C9916540026978D /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				4A3003B82C99164E0026978D /* MyPageView.swift */,
+				4A61D58D2C991BB300F60129 /* EditProfileView.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
 		4A7B6E0D2C89EE59007F0A96 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +142,7 @@
 			children = (
 				4ABF39C22C8DE1BE0067C4C1 /* Components */,
 				4ABF39BC2C8DDBC00067C4C1 /* Auth */,
+				4A3003BA2C9916540026978D /* MyPage */,
 				4ABF39BD2C8DDBD20067C4C1 /* List */,
 				4A7B6E1B2C89EE5A007F0A96 /* ContentView.swift */,
 			);
@@ -164,6 +182,8 @@
 				4ABF39C32C8DE1E20067C4C1 /* BrandImage.swift */,
 				4ABF39C52C8DE2190067C4C1 /* InputField.swift */,
 				4ABF39C72C8DE4020067C4C1 /* BasicButton.swift */,
+				4A61D58B2C991A2600F60129 /* MyPageRow.swift */,
+				4A61D58F2C991E3900F60129 /* PickerField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -247,10 +267,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A61D5902C991E3900F60129 /* PickerField.swift in Sources */,
 				4A7B6E1C2C89EE5A007F0A96 /* ContentView.swift in Sources */,
+				4A61D58E2C991BB300F60129 /* EditProfileView.swift in Sources */,
 				4ABF39C42C8DE1E20067C4C1 /* BrandImage.swift in Sources */,
+				4A3003B92C99164E0026978D /* MyPageView.swift in Sources */,
 				4A7B6E1A2C89EE5A007F0A96 /* TinderCloneApp.swift in Sources */,
 				4A8E87AC2C8C29A40045BFEA /* ListViewModel.swift in Sources */,
+				4A61D58C2C991A2600F60129 /* MyPageRow.swift in Sources */,
 				4ABF39BF2C8DDBF50067C4C1 /* LoginView.swift in Sources */,
 				4ABF39B22C8DD4F60067C4C1 /* Extensions.swift in Sources */,
 				4ABF39C82C8DE4020067C4C1 /* BasicButton.swift in Sources */,
