@@ -9,7 +9,7 @@ import SwiftUI
 import PhotosUI
 
 struct EditProfileView: View {
-    @State var selectedImage: PhotosPickerItem? = nil
+    @EnvironmentObject var authViewModel: AuthViewModel
     @State var name = ""
     @State var age = 18
     @State var message = ""
@@ -33,7 +33,16 @@ struct EditProfileView: View {
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("変更") {
-                        
+                        Task {
+                            guard let currentUser = authViewModel.currentUser else { return }
+                            await authViewModel.updateUserProfile(
+                                withId: currentUser.id,
+                                name: name,
+                                age: age,
+                                message: message
+                            )
+                            dismiss()
+                        }
                     }
                 }
             }
@@ -51,18 +60,28 @@ extension EditProfileView {
     private var editField: some View {
         VStack(spacing: 16) {
             // Photo picker
-            PhotosPicker(selection: $selectedImage) {
-                ZStack {
-                    Image("avatar")
-                        .resizable()
-                        .scaledToFit()
-                        .clipShape(RoundedRectangle(cornerRadius: 6))
-                        .frame(width: 150)
-                    Image(systemName: "photo.circle.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundStyle(Color.white.opacity(0.75))
-                        .frame(width: 60)
+            PhotosPicker(selection: $authViewModel.selectedImage) {
+                Group {
+                    if let uiImage = authViewModel.profileImage {
+                        Image(uiImage: uiImage)
+                            .resizable()
+                            .scaledToFit()
+                            .clipShape(RoundedRectangle(cornerRadius: 6))
+                            .frame(width: 150)
+                    } else {
+                        ZStack {
+                            Image("avatar")
+                                .resizable()
+                                .scaledToFit()
+                                .clipShape(RoundedRectangle(cornerRadius: 6))
+                                .frame(width: 150)
+                            Image(systemName: "photo.circle.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .foregroundStyle(Color.white.opacity(0.75))
+                                .frame(width: 60)
+                        }
+                    }
                 }
             }
             // Input field
@@ -79,5 +98,12 @@ extension EditProfileView {
                 .stroke(Color(.systemGray4), lineWidth: 1)
         }
         .padding()
+        .onAppear {
+            if let currentUser = authViewModel.currentUser {
+                name = currentUser.name
+                age = currentUser.age
+                message = currentUser.message ?? ""
+            }
+        }
     }
 }
