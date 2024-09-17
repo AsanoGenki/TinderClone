@@ -10,6 +10,7 @@ import SwiftUI
 struct MyPageView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     @State private var showEditProfileView = false
+    @State private var showDeleteAlert = false
     var body: some View {
         List {
             // User info
@@ -31,9 +32,19 @@ struct MyPageView: View {
                     MyPageRow(iconName: "arrow.left.circle.fill", label: "ログアウト", tintColor: .red)
                 }
                 Button {
-                    
+                    showDeleteAlert = true
                 } label: {
                     MyPageRow(iconName: "xmark.circle.fill", label: "アカウント削除", tintColor: .red)
+                }
+                .alert("アカウント削除", isPresented: $showDeleteAlert) {
+                    Button("キャンセル", role: .cancel) {}
+                    Button("削除", role: .destructive) {
+                        Task {
+                            await authViewModel.deleteAccount()
+                        }
+                    }
+                } message: {
+                    Text("アカウントを削除しますか？")
                 }
             }
         }
