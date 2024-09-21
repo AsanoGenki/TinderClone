@@ -19,9 +19,10 @@ struct RegistrationView: View {
         VStack {
             // Image
             BrandImage(size: .large)
+                .padding(.vertical, 32)
             // Form
             VStack(spacing: 24) {
-                InputField(text: $email, label: "メールアドレス", placeholder: "入力してください")
+                InputField(text: $email, label: "メールアドレス", placeholder: "入力してください", keyboardType: .emailAddress)
                 InputField(text: $name, label: "お名前", placeholder: "入力してください")
                 PickerField(selection: $age, title: "年齢")
                 InputField(text: $password, label: "パスワード", placeholder: "半角英数6文字以上", isSecureField: true)

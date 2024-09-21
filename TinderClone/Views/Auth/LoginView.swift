@@ -16,9 +16,10 @@ struct LoginView: View {
             VStack {
                 // Image
                 BrandImage(size: .large)
+                    .padding(.vertical, 32)
                 // Form
                 VStack(spacing: 24) {
-                    InputField(text: $email, label: "メールアドレス", placeholder: "入力してください")
+                    InputField(text: $email, label: "メールアドレス", placeholder: "入力してください", keyboardType: .emailAddress)
                     InputField(text: $password, label: "パスワード", placeholder: "半角英数6文字以上", isSecureField: true)
                 }
                 // Button

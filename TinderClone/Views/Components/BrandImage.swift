@@ -15,12 +15,13 @@ enum BrandImageSize: CGFloat {
 struct BrandImage: View {
     let size: BrandImageSize
     var body: some View {
-        Image(systemName: "flame.circle.fill")
-            .resizable()
-            .scaledToFill()
-            .foregroundColor(.red)
+        LinearGradient(colors: [.brandColorLight, .brandColorDark], startPoint: .topTrailing, endPoint: .bottomLeading)
+            .mask(
+                Image(systemName: "flame.fill")
+                    .resizable()
+                    .scaledToFit()
+            )
             .frame(width: size.rawValue, height: size.rawValue)
-            .padding(.vertical, 32)
     }
 }
 
